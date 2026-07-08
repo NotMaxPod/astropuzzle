@@ -261,19 +261,11 @@ section {
     color: #101322;
 }
 
-/*Main Card Section*/
-.main_card_section {
-    padding: 6rem 8%;
-    background: linear-gradient(180deg, #101322, #171d33);
-}
-
-.section_heading,
-.main_card {
-    position: relative;
-    z-index: 1;
-}
+/*Section Heading*/
 
 .section_heading {
+    position: relative;
+    z-index: 1;
     text-align: center;
     margin-bottom: 3rem;
 }
@@ -294,105 +286,6 @@ section {
     background: linear-gradient(to right, transparent, #bfa36a, transparent);
     box-shadow: 0 0 18px rgba(191, 163, 106, 0.45);
 }
-
-.main_card {
-    padding: 6rem 8%;
-    position: relative;
-    overflow: hidden;
-    background: radial-gradient(circle at top right, rgba(191, 163, 106, 0.24), transparent 30%), radial-gradient(circle at bottom left, rgba(124, 143, 179, 0.24), transparent 34%), linear-gradient(135deg, rgba(32, 38, 61, 0.96), rgba(16, 19, 34, 0.98));
-    border: 1px solid rgba(191, 163, 106, 0.34);
-    box-shadow: 0 30px 90px rgba(0,0,0,0.48), 0 0 40px rgba(191, 163, 06, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.main_card::before {
-    content: "";
-    position: absolute;
-    inset: 22px;
-    border: 1px solid rgba(241, 237, 228, 0.08);
-    pointer-events: none;
-}
-
-.main_card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 10%;
-    right: 10%;
-    height: 1px;
-
-    background: linear-gradient(to right, to transparent, rgba(191, 163, 106, 0.9), transparent);
-    box-shadow: 0 0 20px rgba(191, 163, 106, 0.55);
-}
-
-.main_card h3 {
-    position: relative;
-    z-index: 2;
-    color: #bfa36a;
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    margin-bottom: 1.5rem;
-    text-align: center;
-    text-shadow: 0 0 18px rgba(191, 163, 106, 0.25);
-}
-
-.main_card p {
-    position: relative;
-    z-index: 2;
-    max-width: 780px;
-    margin: 0 auto 2rem auto;
-    color: #cfc8ba;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: center;
-}
-
-.main_card p::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 1px;
-    margin: 1.7rem auto 0;
-    background: linear-gradient(to right, transparent, #bfa36a, transparent);
-}
-
-.main_card ul {
-    position: relative;
-    z-index: 2;
-    list-style: none;
-    padding: 0;
-    margin: 0 auto 2rem auto;
-    max-width: 760px;
-    display: grid;
-    gap: 1rem;
-}
-
-.main_card li {
-    color: #cfc8ba;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    padding-left: 2rem;
-    position: relative;
-}
-
-.main_card li::before {
-    content:"\263E";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #bfa36a;
-    text-shadow: 0 0 12px rgba(191, 163, 106, 0.55);
-}
-
-.main_card .button {
-    position: relative;
-    z-index: 2;
-    display: block;
-    width: fit-content;
-    margin: 2.3rem auto 0 auto;
-    box-shadow: 0 0 24px rgba(191, 163, 106, 0.12);
-}
-
-/*Main card borders and decor*/
-
 /*Information paragraphs*/
 
 .info_block {
