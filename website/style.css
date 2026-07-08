@@ -1,0 +1,1282 @@
+/*General*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #f1ede4;
+    background: radial-gradient(circle at 20% 10%, rgba(191, 163, 106, 0.08), transparent 25%), radial-gradient(circle at 80% 20%, rgba(124, 143, 179, 0.10), transparent 28%), linear-gradient(180deg, #101322, #171d33);
+    min-height: 100vh;
+}
+
+/*Typography*/
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: clamp(2.1rem, 5vw, 4rem);
+    color: #f1ede4;
+}
+
+h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+    color: #f1ede4;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+    color: #d2b87a;
+    margin-bottom: 0.8rem;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #cfc8ba;
+}
+
+li {
+    font-size: 1.2rem;
+    color: #cfc8ba;
+    line-height: 1.8;
+}
+
+/*Images and Links*/
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/*Common Layout*/
+
+section {
+    scroll-margin: 90px;
+}
+
+.card_section,
+.info_block,
+.price_section,
+.aboutme_card {
+    padding: 7rem 8%;
+}
+
+/*Top Bar*/
+.top_bar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    height: 72px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(16, 19, 34, 0.88);
+    border-bottom: 1px solid rgba(241, 237, 228, 0.12);
+    backdrop-filter: blur(14px);
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #bfa36a;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.nav_links a {
+    position: relative;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #cfc8ba;
+
+    transition: color 0.3s ease;
+}
+.nav_links a:hover {
+    color: #d2b87a;
+}
+
+.nav_links a::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 1px;
+
+    background: #bfa36a;
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.3s ease;
+}
+
+.nav_links a:hover::after {
+    transform: scaleX(1);
+}
+
+/*Hero Section*/
+.hero {
+    min-height: 800px;
+    padding: 7rem 8%;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: #101322;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("images/hero_p2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: brightness(0.45) blur(2px);
+    transform: scale(1.04);
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to bottom, rgba(10, 6, 20, 0) 0%, rgba(10, 6, 20, 0.7) 65%, #101322 100%);
+    z-index: 1;
+}
+
+.hero_content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+
+    padding: 0;
+}
+
+.hero_content h1 {
+    font-size: clamp(2.1rem, 5vw, 4rem);
+    line-height: 1.12;
+    margin-bottom: 1.4rem;
+
+    color: #f1ede4;
+    font-weight: 300;
+    letter-spacing: -0.03rem;
+
+    text-shadow: 0 4px 18px rgba(0,0,0,0.75);
+}
+
+.hero_content h2 {
+    max-width: 760px;
+    font-size: clamp(1.05rem, 2vw, 1.45rem);
+    line-height: 1.7;
+    margin: 0 auto;
+
+    font-style: italic;
+    font-weight: 300;
+    text-align: center;
+    color: #cfc8ba;
+
+    text-shadow: 0 3px 14px rgba(0,0,0,0.7);
+}
+
+/*Hero buttons*/
+
+.hero_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.2rem;
+}
+
+/*All buttons*/
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 999px;
+    border: 1px solid #bfa36a;
+
+    background: rgba(191, 163, 106, 0.12);
+    color: #f1ede4;
+
+    text-decoration: none;
+    font-weight: 400;
+
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.button:hover {
+    background: #bfa36a;
+    color: #101322;
+    transform: translateY(-3px);
+}
+
+.secondary_button {
+    border-color: rgba(124, 143, 179, 0.55);
+    background: rgba(124, 143, 179, 0.12);
+}
+
+.secondary_button:hover {
+    background-color: #7c8fb3;
+    border-color: #7c8fb3;
+    color: #101322;
+}
+
+/*Main Card Section*/
+.main_card_section {
+    padding: 6rem 8%;
+    background: linear-gradient(180deg, #101322, #171d33);
+}
+
+.section_heading,
+.main_card {
+    position: relative;
+    z-index: 1;
+}
+
+.section_heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section_heading h2 {
+    color: #f1ede4;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    text-shadow: 0 6px 24px rgba(0,0,0,0.55);
+}
+
+.section_heading::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 1px;
+    margin: 1.5rem auto 0;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+    box-shadow: 0 0 18px rgba(191, 163, 106, 0.45);
+}
+
+.main_card {
+    padding: 6rem 8%;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top right, rgba(191, 163, 106, 0.24), transparent 30%), radial-gradient(circle at bottom left, rgba(124, 143, 179, 0.24), transparent 34%), linear-gradient(135deg, rgba(32, 38, 61, 0.96), rgba(16, 19, 34, 0.98));
+    border: 1px solid rgba(191, 163, 106, 0.34);
+    box-shadow: 0 30px 90px rgba(0,0,0,0.48), 0 0 40px rgba(191, 163, 06, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.main_card::before {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px solid rgba(241, 237, 228, 0.08);
+    pointer-events: none;
+}
+
+.main_card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+
+    background: linear-gradient(to right, to transparent, rgba(191, 163, 106, 0.9), transparent);
+    box-shadow: 0 0 20px rgba(191, 163, 106, 0.55);
+}
+
+.main_card h3 {
+    position: relative;
+    z-index: 2;
+    color: #bfa36a;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 18px rgba(191, 163, 106, 0.25);
+}
+
+.main_card p {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    margin: 0 auto 2rem auto;
+    color: #cfc8ba;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.main_card p::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 1px;
+    margin: 1.7rem auto 0;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+}
+
+.main_card ul {
+    position: relative;
+    z-index: 2;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 2rem auto;
+    max-width: 760px;
+    display: grid;
+    gap: 1rem;
+}
+
+.main_card li {
+    color: #cfc8ba;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.main_card li::before {
+    content:"\263E";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #bfa36a;
+    text-shadow: 0 0 12px rgba(191, 163, 106, 0.55);
+}
+
+.main_card .button {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: fit-content;
+    margin: 2.3rem auto 0 auto;
+    box-shadow: 0 0 24px rgba(191, 163, 106, 0.12);
+}
+
+/*Main card borders and decor*/
+
+.corner {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    pointer-events: none;
+}
+
+.corner::before,
+.corner::after {
+    content: "";
+    position: absolute;
+    background: #bfa36a;
+    box-shadow: 0 0 14px rgba(191, 163, 106, 0.5);
+}
+
+.corner::before {
+    width: 100%;
+    height: 1px;
+}
+
+.corner::after {
+    width: 1px;
+    height: 100%;
+}
+
+.session_card ul,
+.price_list {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+.corner_top_left {
+    top: 22px;
+    left: 22px;
+}
+
+.corner_top_right {
+    top: 22px;
+    right: 22px;
+    transform: rotate(90deg);
+}
+
+.corner_bottom_right {
+    bottom: 22px;
+    right: 22px;
+    transform: rotate(180deg);
+}
+
+.corner_bottom_left {
+    bottom: 22px;
+    left: 22px;
+    transform: rotate(270deg);
+}
+
+/*Information paragraphs*/
+
+.info_block {
+    padding: 7rem 8%;
+    position: relative;
+    overflow: hidden;
+    background: #171d33;
+}
+
+.info_block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("images/info_banner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: brightness(0.55) contrast(0.9) saturate(0.75) blur(1px);
+    transform: scale(1.03);
+    z-index: 0;
+}
+
+.info_block::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #171d33 0%, rgba(23, 29, 51, 0.85) 12%, rgba(23, 29, 51, 0.35) 32%, rgba(23, 29, 51, 0.25) 68%, rgba(23, 29, 51, 0.85) 88%, #131628 100%);
+    z-index: 1;
+}
+
+.info_card {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.info_card p {
+    padding: 0.5rem 2.5rem;
+    text-align: justify;
+    text-align-last: center;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #cfc8ba;
+}
+
+.info_card p::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 1px;
+    margin: 1.5rem auto 0;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+    box-shadow: 0 0 14px rgba(191, 163, 106, 0.35);
+}
+
+/*Session cards*/
+
+.card_section {
+    padding: 7rem 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.session_grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.session_card:last-child {
+    grid-column: 1 /-1;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.session_card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 360px;
+    background: radial-gradient(circle at top right, rgba(191, 163, 106, 0.20), transparent 32%), radial-gradient(circle at bottom left, rgba(124, 143, 179, 0.18), transparent 34%), linear-gradient(180deg, rgba(32, 38, 61, 0.96), rgba(12, 16, 32, 0.98));
+    padding: 2.3rem;
+    border-radius: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid rgba(241, 237, 228, 0.24);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.42), 0 0 35px rgba(191, 163, 106, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.session_card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(191, 163, 106, 0.55);
+    box-shadow: 0 26px 70px rgba(0,0,0,0.5), 0 0 35px rgba(191, 163, 106, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.session_card::before {
+    content: "";
+    position: absolute;
+    inset: 16px;
+
+    border-radius: 22px;
+    border: 1px solid rgba(241, 237, 228, 0.08);
+
+
+    pointer-events: none;
+}
+
+.session_card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18%;
+    right: 18%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(191, 163, 106, 0.9), transparent);
+    box-shadow: 0 0 20px rgba(191, 163, 106, 0.55);
+}
+
+.session_card h3 {
+    position: relative;
+    z-index: 1;
+
+    color: #bfa36a;
+    font-size: 1.55rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 16px rgba(191, 163, 106, 0.25), 0 4px 18px rgba(0,0,0,0.45);
+}
+
+.session_card h3::after {
+    content: "";
+    display: block;
+
+    width: 70px;
+    height: 1px;
+    margin: 1px auto 0;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+    text-shadow: 0 0 14px rgba(191, 163, 106, 0.4);
+}
+
+.session_card h3::before {
+    content: "\2726";
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #bfa36a;
+    font-size: 1.1rem;
+
+    text-shadow: 0 0 18px rgba(191, 163, 106, 0.65);
+}
+
+.session_card p {
+    position: relative;
+    z-index: 1;
+    color: #cfc8ba;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 1.7rem;
+}
+
+.view_more {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    margin: auto auto 0 auto;
+    padding: 0.7rem 1.45rem;
+    border-radius: 999px;
+    border: 1px solid rgba(191, 163, 106, 0.75);
+    background: linear-gradient(135deg, rgba(191, 163, 106, 0.75), rgba(124, 143, 179, 0.10));
+    box-shadow: 0 0 18px rgba(191, 163, 106, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    color: #f1ede4;
+    font: inherit;
+    cursor: pointer;
+    
+    transition: background-color 0.8s ease, color 0.6s ease, transform 0.6s ease;
+}
+
+.view_more:hover {
+    background: #bfa36a;
+    color: #101322;
+    transform: translateY(-3px);
+    box-shadow: 0 0 28px rgba(191, 163, 106, 0.28), inset 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.details {
+    position: relative;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.7rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.6s ease, margin-top 0.6s ease;
+}
+
+.session_card.open .details {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 1.7rem;
+}
+
+.session_card li {
+    position: relative;
+    color: #cfc8ba;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    padding-left: 1.7rem;
+}
+
+.session_card li::before {
+    content: "\263E";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    color: #bfa36a;
+    font-size: 0.8rem;
+    text-shadow: 0 0  12px rgba(191, 163, 106, 0.55);
+}
+
+/*Registration Section*/
+
+.registration_section {
+    padding: 7rem 8%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #101322;
+}
+
+.registration_section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    background-image: url("images/registration_banner_2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: scale(1.03);
+    filter: blur(3px) brightness(0.3); 
+
+    z-index: 0;
+}
+
+.registration_section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #14192d 0%, rgba(23, 29, 51, 0.85) 12%, rgba(23, 29, 51, 0.35) 32%, rgba(23, 29, 51, 0.25) 68%, rgba(23, 29, 51, 0.85) 88%, #161a2f 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.registration_section h2,
+.registration_list {
+    position: relative;
+    z-index: 2;
+}
+
+.registration_section h2 {
+    text-align: center;
+    color: #f1ede4;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    margin-bottom: 2.5rem;
+    text-shadow: 0 6px 24px rgba(0,0,0,0.45);
+}
+
+.registration_section h2::after {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 1px;
+    margin: 1.4rem auto 0;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+    box-shadow: 0 0 18px rgba(191, 163, 106, 0.45);
+}
+
+.registration_list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    position: relative;
+    max-width: 820px;
+}
+
+.registration_list::before {
+    content: "";
+    position: absolute;
+    left: 0.55rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(191, 163, 106, 0.85), rgba(124, 143, 179, 0.45), rgba(191, 163, 106, 0.65), transparent);
+    box-shadow: 0 0 14px rgba(191, 163, 106, 0.55), 0 0 28px rgba(124, 143, 179, 0.22);
+}
+
+.registration_list li {
+    position: relative;
+    padding-left: 3rem;
+    color: #cfc8ba;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.35);
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.registration_list li:hover {
+    color: #f1ede4;
+    transform: translateX(6px);
+    text-shadow: 0 0 16px rgba(191, 163, 106, 0.18), 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.registration_list li::before {
+    content: "\2726";
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bfa36a;
+    font-size: 1rem;
+    text-shadow: 0 0 12px rgba(191, 163, 106, 0.8), 0 0 24px rgba(191, 163, 106, 0.35);
+}
+
+.registration_list li::after {
+    content: "";
+    position: absolute;
+    left: 0.18rem;
+    top: 0.48rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: rgba(191, 163, 106, 0.18);
+    box-shadow: 0 0 22px rgba(191, 163, 106, 0.45);
+    pointer-events: none;
+}
+
+/*Contact Section*/
+
+.contact_section {
+    padding: 7rem 8%;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.contact_section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to bottom, rgba(10, 6, 20, 0) 0%, rgba(10, 6, 20, 0.7) 65%, #101322 100%);
+    z-index: 0;
+}
+
+.contact_section h2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #f1ede4;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    margin-bottom: 3.5rem;
+    text-shadow: 0 0 18px rgba(191, 163, 106, 0.22), 0 6px 24px rgba(0,0,0,0.65);
+}
+
+.contact_section h2::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 1px;
+    margin: 1.4rem auto 0;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+    box-shadow: 0 0 18px rgba(191, 163, 106, 0.5);
+}
+
+.contact_card {
+    position: relative;
+    z-index: 1;
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.socials {
+    position: relative;
+    overflow: hidden;
+    padding: 2.4rem;
+    border-radius: 30px;
+    background: radial-gradient(circle at top right, rgba(191, 163, 106, 0.16), transparent 34%), linear-gradient(145deg, rgba(32, 38, 61, 0.82), rgba(16, 19, 34, 0.9));
+    border: 1px solid rgba(191, 163, 106, 0.22);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+    z-index: 1;
+}
+
+.socials::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(191, 163, 106, 0.85), transparent);
+    box-shadow: 0 0 18px rgba(191, 163, 106, 0.45);
+}
+
+.socials h3 {
+    position: relative;
+    z-index: 1;
+    color: #bfa36a;
+    font-size: 1.45rem;
+    text-align: center;
+    margin-bottom: 1.4rem;
+    text-shadow: 0 0 16px rgba(191, 163, 106, 0.25), 0 4px 18px rgba(0,0,0,0.45);
+}
+
+.socials h3::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 1px;
+    margin: 1rem auto 0;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+    box-shadow: 0 0 14px rgba(191, 163, 106, 0.35);
+}
+
+.socials p {
+    position: relative;
+    z-index: 1;
+    color: #cfc8ba;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.45);
+}
+
+.socials p:last-child {
+    margin-bottom: 0;
+}
+
+/*About me Section*/
+
+.aboutme_section {
+    padding: 7rem 8%;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 15% 80%, rgba(191, 163, 106, 0.12), transparent 30%), radial-gradient(circle at 85% 75%, rgba(124, 143, 179, 0.14), transparent 32%), linear-gradient(180deg, #101322, #171d33);
+}
+
+.aboutme_section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(241, 237, 228, 0.20) 1px, transparent 1px), radial-gradient(circle, rgba(191, 163, 106, 0.14) 1px, transparent 1px);
+    background-size: 95px 95px, 160px 160px;
+    background-position: 0 0, 55px 70px;
+    opacity: 0.14;
+    pointer-events: none;
+}
+
+.aboutme_section h2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #f1ede4;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    margin-bottom: 4rem;
+    text-shadow: 0 0 18px rgba(191, 163, 106, 0.22), 0 6px 24px rgba(0,0,0,0.65);
+}
+
+.aboutme_section h2::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 1px;
+    margin: 1.4rem auto 0;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+    box-shadow: 0 0 18px rgba(191, 163, 106, 0.5);
+}
+
+.aboutme_content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.15fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.aboutme_image {
+    width: 100%;
+}
+
+.aboutme_image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+}
+
+.aboutme_text {
+    position: relative;
+    padding-left: 2.2rem;
+    border: 1px solid rgba(191, 163, 106, 0.6);
+}
+
+.aboutme_text::before {
+    content: "\2726";
+    position: absolute;
+    left: -0.45rem;
+    top: -0.15rem;
+    color: #bfa36a;
+    font-size: 1rem;
+    text-shadow: 0 0 12px rgba(91, 163, 106, .85), 0 0 24px rgba(191, 163, 106, 0.4);
+}
+
+.aboutme_text::after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(191, 163, 106, 0.9), rgba(124, 143, 179, 0.45), transparent);
+    box-shadow: 0 0 14px rgba(191, 163, 106, 0.9), rgba(124, 143, 179, 0.45);
+}
+
+.aboutme_text p {
+    color: #cfc8ba;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.45);
+    margin: 2rem 2rem 2rem 2rem;
+}
+
+/*Screen sizes*/
+
+/**/
+@media (max-width: 900px) {
+    section,
+    .card_section,
+    .info_block,
+    .main_card_section,
+    .registration_section,
+    .contact_section,
+    .aboutme_section {
+        padding: 5.5rem, 6%;
+    }
+
+    .session_grid {
+        grid-template-columns: 1fr;
+        max-width: 650px; 
+    }
+
+    .session_card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .contact_card {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+    }
+
+    .aboutme_content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 700px;
+    }
+
+    .aboutme_image {
+        max-width: 430;
+        margin: 0 auto;
+    }
+
+    .aboutme_text {
+        padding-left: 1.7rem;
+    }
+}
+
+/*Phone Screen*/
+@media (max-width: 650px) {
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.7rem, 9vw, 2.3rem);
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    section,
+    .main_card_section,
+    .info_block,
+    .card_section,
+    .aboutme_section,
+    .contact_section {
+        padding: 4.5rem 6%;
+    }
+
+    .hero {
+        min-height: 90vh;
+        padding: 5rem 6%;
+    }
+
+    .hero_content h1 {
+        font-size: clamp(1.2rem, 12vw, 3.2rem);
+    }
+
+    .hero_content h2 {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .herro_buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button,
+    .view_more {
+        width: 75%;
+        max-width: 140px;
+        text-align: center;
+    }
+
+    .main_card {
+        padding: 2rem 1.4rem;
+        border-radius: 24px;
+    }
+
+    .main_card p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .main_card li {
+        font-size: 0.98rem;
+    }
+
+    .session_card {
+        padding: 2rem 1.4rem;
+        min-height: auto;
+        border-radius: 24px;
+    }
+
+    .session_card p {
+        font-size: 0.98rem;
+        line-height: 1.75;
+    }
+
+    .details {
+        font-size: 0.95rem;
+    }
+
+    .info_card p {
+        padding: 1.6rem 1.3rem;
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: justify;
+        text-align-last: auto;
+    }
+
+    .registraion_list {
+        max-width: 100%;
+        gap: 1.6rem;
+    }
+
+    .registration_list li {
+        padding-left: 2.5rem;
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .registraion_list::before {
+        left: 0.5rem;
+    }
+
+    .socials {
+        padding: 2rem 1.4rem;
+        border-radius: 24px;
+    }
+
+    .socails p {
+        font-size: 1rem;
+    }
+
+    .aboutme_content {
+        gap: 2.5rem;
+    }
+
+    .aboutme_image {
+        max-width: 100%;
+    }
+
+    .aboutme_text {
+        padding-left: 1.5rem;
+    }
+
+    .aboutme_text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
+
+/*For awkward spacing*/
+@media (max-width: 850px) {
+    .top_bar {
+        padding: 0.9rem 6%;
+        height: auto;
+        min-height: 72px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.7rem;
+    }
+
+    .logo {
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .nav_links {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+    }
+
+    .nav_links a {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    main {
+        padding-top: 120px;
+    }
+}
+
+/*Top bar for multiple screens*/
+@media (max-width: 700px) {
+    .top_bar {
+        height: auto;
+        min-height: 72px;
+        padding: 1rem 6%;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .nav_links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav_links a {
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding-top: 120px;
+    }
+}
+
+/*Tiny screens*/
+@media (max-width: 420px) {
+    .hero {
+        padding: 4rem 5%;
+    }
+
+    section,
+    .main_card_section,
+    .info_block,
+    .card_section,
+    .aboutme_section,
+    .contact_section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .main_card,
+    .session_card,
+    .socials {
+        padding: 1.6rem 1.1rem;
+    }
+
+    .registration_list li {
+        padding-left: 2.2rem;
+    }
+
+    .button,
+    .view_more {
+        max-width: 75%;
+    }
+}
