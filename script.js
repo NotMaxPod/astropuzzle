@@ -10,7 +10,7 @@ viewMoreButtons.forEach(button => {
         if (card.classList.contains("open")) {
             button.textContent = "Закрыть";
         } else {
-            button.textContent = "Читать Более";
+            button.textContent = "Подробнее";
         }
     });
 });
