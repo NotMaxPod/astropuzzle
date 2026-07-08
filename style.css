@@ -393,60 +393,6 @@ section {
 
 /*Main card borders and decor*/
 
-.corner {
-    position: absolute;
-    width: 42px;
-    height: 42px;
-    pointer-events: none;
-}
-
-.corner::before,
-.corner::after {
-    content: "";
-    position: absolute;
-    background: #bfa36a;
-    box-shadow: 0 0 14px rgba(191, 163, 106, 0.5);
-}
-
-.corner::before {
-    width: 100%;
-    height: 1px;
-}
-
-.corner::after {
-    width: 1px;
-    height: 100%;
-}
-
-.session_card ul,
-.price_list {
-    margin-top: 1rem;
-    padding-left: 1.2rem;
-}
-
-.corner_top_left {
-    top: 22px;
-    left: 22px;
-}
-
-.corner_top_right {
-    top: 22px;
-    right: 22px;
-    transform: rotate(90deg);
-}
-
-.corner_bottom_right {
-    bottom: 22px;
-    right: 22px;
-    transform: rotate(180deg);
-}
-
-.corner_bottom_left {
-    bottom: 22px;
-    left: 22px;
-    transform: rotate(270deg);
-}
-
 /*Information paragraphs*/
 
 .info_block {
@@ -520,15 +466,9 @@ section {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
     max-width: 1100px;
-    margin: 0 auto;
-}
-
-.session_card:last-child {
-    grid-column: 1 /-1;
-    max-width: 540px;
     margin: 0 auto;
 }
 
