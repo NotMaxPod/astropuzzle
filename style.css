@@ -258,6 +258,58 @@ section {
     color: #101322;
 }
 
+/*Decor Banner for in between information text and hero section*/
+.decor_banner {
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    background: linear-gradient(to bottom, #101322 0%, #14192c 50%, #101322 100%);
+
+}
+
+.decor_banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(120deg, transparent 20%, rgba(191, 163, 106, 0.015) 50%, transparent 80%);
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.decor_banner::after {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    top: 49%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(191, 163, 106, 0.75), transparent);
+
+    box-shadow: 0 0 16px rgba(191, 163, 106, 0.45), 0 0 32px rgba(124, 143, 179, 0.18);
+}
+
+.decor_banner span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bfa36a;
+    font-size: 1.3rem;
+    z-index: 2;
+}
+
+.decor_banner span::before {
+    content: "\2726";
+    text-shadow: 0 0 12px rgba(191, 163, 106, 0.9), 0 0 28px rgba(91, 163,106, 0.45);
+}
+
 /*Section Heading*/
 
 .section_heading {
