@@ -142,69 +142,64 @@ section {
 .nav_links a:hover::after {
     transform: scaleX(1);
 }
-
-/*Hero Section*/
-.hero {
-    min-height: 70vh;
-    padding: 5rem 7%;
-
+/*Intro Section shared with hero and info text*/
+.intro {
     position: relative;
     overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    isolation: isolate;
     background: #101322;
 }
 
-.hero::before {
+.intro::before {
     content: "";
-    position: absolute;
     inset: 0;
-
+    position: absolute;
     background-image: url("images/hero_p2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    filter: brightness(0.45) blur(4px) contrast(0.95) saturate(0.8);
+    filter: brightness(0.3) contrast(1.2) saturate(0.75);
     transform: scale(1.02);
     z-index: 0;
 }
 
-.hero::after {
+.intro::after {
     content: "";
     position: absolute;
     inset: 0;
-
-    background: linear-gradient(to bottom, #10132244 0%, #10132225 15%, #1013229b 92%, #101322 98%, #101322 100%);
+    background: linear-gradient(to bottom, rgba(16, 19, 34, 0.42) 0%, rgba(16, 19, 34, 0.62) 42%, rgba(23, 29, 51, 0.88) 72%, #171d33 100%);
     z-index: 1;
 }
 
+/*Hero Section*/
+.hero {
+    min-height: 68vh;
+    padding: 6rem 8% 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .hero_content {
-    position: relative;
     z-index: 2;
+    max-width: 900px;
+    text-align: center;
 }
 
 .hero_content h1 {
     padding-top: 2rem;
-    font-size: clamp(2.1rem, 4.5vw, 3rem);
-    line-height: 1.5;
-    margin-top: 1.6rem;
-    margin-bottom: 2rem;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.12;
+    margin-bottom: 1.4rem;
 
     color: #f1ede4;
-    font-weight: 300;
-    letter-spacing: -0.03rem;
-    text-align: center;
 
-    text-shadow: 0 4px 18px rgba(0,0,0,0.75);
+    text-shadow: 0 0 24px rgba(191, 163, 106, 0.16), 0 6px 28px rgba(0, 0, 0, 0.85);
 }
 
 .hero_content h2 {
     max-width: 760px;
-    font-size: clamp(1.05rem, 2vw, 1.45rem);
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
     line-height: 1.7;
     margin: 0 auto 1.6rem;
 
@@ -213,7 +208,7 @@ section {
     text-align: center;
     color: #cfc8ba;
 
-    text-shadow: 0 3px 14px rgba(0,0,0,0.7);
+    text-shadow: 0 4px 18px rgba(0,0,0,0.85);
 }
 
 /*Hero buttons*/
@@ -223,7 +218,7 @@ section {
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 3rem;
+    margin-top: 2.2rem;
 }
 
 /*All buttons*/
@@ -262,53 +257,98 @@ section {
 
 /*Decor Banner for in between information text and hero section*/
 .decor_banner {
-    height: 120px;
+    z-index: 2;
+    height: 70px;
+    width: min(760px, 84%);
     position: relative;
-    overflow: hidden;
-    margin-top: -1px;
-    margin-bottom: -1px;
-    background: linear-gradient(to bottom, #101322 0%, #14192c 50%, #101322 100%);
-
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .decor_banner::before {
     content: "";
     position: absolute;
-    inset: 0;
-    opacity: 0.45;
-    pointer-events: none;
-}
-
-.decor_banner::after {
-    content: "";
-    position: absolute;
-    left: 18%;
-    right: 18%;
-    top: 49%;
+    left: 0;
+    right: 0;
+    top: 50%;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(191, 163, 106, 0.85), transparent);
-
+    background: linear-gradient(to right, transparent, rgba(191, 163, 106, 0.75), transparent);
     box-shadow: 0 0 16px rgba(191, 163, 106, 0.45), 0 0 32px rgba(124, 143, 179, 0.18);
 }
 
 .decor_banner span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     width: 42px;
     height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #bfa36a;
-    font-size: 1.3rem;
-    z-index: 2;
+    font-size: 1.25rem;
+    z-index: 1;
+    background: rgba(16, 19, 34, 0.65);
+    border-radius: 50%;
 }
 
 .decor_banner span::before {
     content: "\2726";
     text-shadow: 0 0 12px rgba(191, 163, 106, 0.9), 0 0 28px rgba(91, 163,106, 0.45);
+}
+/*Information paragraphs*/
+
+.info_block {
+    padding: 3rem 8%;
+    position: relative;
+}
+
+.info_card {
+    z-index: 2;
+    position: relative;
+    display: grid;
+    gap: 1.6rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.info_card::before,
+.info_card::after {
+    content: "";
+    position: absolute;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 1px;
+    background: to bottom, transparent, rgba(191, 163, 106, 0.55), transparent;
+}
+
+.info_card::before {
+    left: 0;
+}
+
+.info_card::after {
+    right: 0;
+}
+
+.info_card p {
+    position: relative;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: #cfc8ba;
+    padding: 1.3rem 2rem;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.75);
+}
+
+.info_card p::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 1px;
+    margin: 1.5rem auto 1rem;
+    background: linear-gradient(to right, transparent, #bfa36a, transparent);
+    box-shadow: 0 0 14px rgba(191, 163, 106, 0.35);
 }
 
 /*Section Heading*/
@@ -335,66 +375,6 @@ section {
     margin: 1.5rem auto 0;
     background: linear-gradient(to right, transparent, #bfa36a, transparent);
     box-shadow: 0 0 18px rgba(191, 163, 106, 0.45);
-}
-/*Information paragraphs*/
-
-.info_block {
-    padding: 2rem 8%;
-    position: relative;
-    overflow: hidden;
-    background: #171d33;
-}
-
-.info_block::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image: url("images/info_banner.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    filter: brightness(0.25) blur(2px) contrast(0.95) saturate(0.9);
-    transform: scale(1.02);
-    z-index: 0;
-}
-
-.info_block::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, #101322 0%, #1013227e 10%, #1013225e 12%, #1013229e 58%, #101322c9 88%, #171d33 100%);
-    z-index: 1;
-}
-
-.info_card {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    gap: 3rem;
-    max-width: 1100px;
-    margin: 1rem auto 2rem;
-}
-
-.info_card p {
-    padding: 0.3rem 1.5rem;
-    text-align: justify;
-    text-align-last: center;
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.9;
-    color: #cfc8ba;
-}
-
-.info_card p::after {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 1px;
-    margin: 1.5rem auto 1rem;
-    background: linear-gradient(to right, transparent, #bfa36a, transparent);
-    box-shadow: 0 0 14px rgba(191, 163, 106, 0.35);
 }
 
 /*Session cards*/
@@ -1139,6 +1119,40 @@ section {
 
     main {
         padding-top: 120px;
+    }
+
+    .hero {
+        min-height: 62vh;
+        padding: 5rem 6% 3rem;
+    }
+
+    .hero_content h1 {
+        font-size: clamp(2rem 11vw 3rem);
+    }
+
+    .hero_content h2 {
+        font-size: 1rem;
+    }
+
+    .decor_banner {
+        height: 55px;
+        width: 86%;
+    }
+
+    .info_block {
+        padding: 2.5rem 6% 5rem;
+    }
+
+    .info_card p {
+        padding: 0;
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .info_card::before,
+    .info_card::after {
+        display: none;
     }
 }
 
