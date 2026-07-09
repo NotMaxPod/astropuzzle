@@ -734,19 +734,28 @@ section {
     box-shadow: 0 0 14px rgba(191, 163, 106, 0.35);
 }
 
-.socials p {
-    position: relative;
-    z-index: 1;
-    color: #cfc8ba;
-    font-size: 1.05rem;
-    line-height: 1.8;
+.socials a {
+    display: block;
+    padding: 0.8rem 1rem;
+    margin: 0 0 1rem;
+    border-radius: 999px;
+    color: #f1ede4;
+    text-decoration: none;
     text-align: center;
-    margin-bottom: 1rem;
-    text-shadow: 0 3px 14px rgba(0,0,0,0.45);
+    background: linear-gradient(135deg, rgba(191, 163, 106, 0.10), rgba(191, 163, 106, 0.0));
+    border: 1px solid rgba(191, 163, 106, 0.45);
+    box-shadow: 0 0 18px rgba(191, 163, 106, 0.08), inset 0 1px 0 rgba(255,255,255,0.06);
+
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.socials p:last-child {
-    margin-bottom: 0;
+.socials a:hover {
+    transform: translateY(-3px);
+    color: #101322;
+    background: #bfa36a;
+    border-color: #bfa36a;
+
+    box-shadow: 0 0 28px rgba(191, 163, 106, 0.3), 0 12px 30px rgba(0,0,0,0.35);
 }
 
 /*About me Section*/
