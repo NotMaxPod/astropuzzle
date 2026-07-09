@@ -305,7 +305,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
 
-    filter: brightness(0.55) contrast(0.9) saturate(0.75) blur(1px);
+    filter: brightness(0.35) contrast(1.1) saturate(0.75) blur(1.5px);
     transform: scale(1.03);
     z-index: 0;
 }
@@ -314,7 +314,7 @@ section {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, #101322 0%, rgba(23, 29, 51, 0.85) 12%, rgba(23, 29, 51, 0.35) 32%, rgba(23, 29, 51, 0.25) 68%, rgba(23, 29, 51, 0.85) 78%, #171d33 100%);
+    background: linear-gradient(to bottom, #101322 0%, rgba(15, 18, 32, 0.85) 12%, rgba(15, 19, 33, 0.35) 32%, rgba(12, 16, 28, 0.25) 68%, rgba(23, 29, 51, 0.85) 88%, #171d33 100%);
     z-index: 1;
 }
 
@@ -322,7 +322,7 @@ section {
     position: relative;
     z-index: 2;
     display: grid;
-    gap: 2rem;
+    gap: 3rem;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -332,7 +332,7 @@ section {
     text-align: justify;
     text-align-last: center;
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.9;
     color: #cfc8ba;
 }
@@ -674,11 +674,11 @@ section {
 .contact_section h2::after {
     content: "";
     display: block;
-    width: 15px;
+    width: 160px;
     height: 1px;
-    margin: 1.4rem auto 0;
+    margin: 1.5rem auto 0;
     background: linear-gradient(to right, transparent, #bfa36a, transparent);
-    box-shadow: 0 0 18px rgba(191, 163, 106, 0.5);
+    box-shadow: 0 0 18px rgba(191, 163, 106, 0.45);
 }
 
 .contact_card {
