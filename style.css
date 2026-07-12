@@ -1013,7 +1013,7 @@ section {
     }
 
     .details.open .details {
-        max-height: 900px;
+        max-height: 1500px;
     }
 
     .info_card p {
@@ -1158,9 +1158,8 @@ section {
     .info_card::after {
         display: none;
     }
-
-    .details.open .details {
-        max-height: 900px;
+    .session_card.open .details {
+        max-height: 2000px;
     }
 }
 
@@ -1193,5 +1192,9 @@ section {
     .button,
     .view_more {
         max-width: 75%;
+    }
+
+    .session_card.open .details {
+        max-height: 2000px;
     }
 }
