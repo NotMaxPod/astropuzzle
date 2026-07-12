@@ -928,10 +928,6 @@ section {
     .aboutme_text {
         padding-left: 1.7rem;
     }
-    
-    .session_card.open .details {
-        max-height: 2000px;
-    }
 }
 
 /*Phone Screen*/
@@ -1103,10 +1099,6 @@ section {
     main {
         padding-top: 120px;
     }
-
-    .session_card.open .details {
-        max-height: 2000px;
-    }
 }
 
 /*Top bar for multiple screens*/
@@ -1166,9 +1158,6 @@ section {
     .info_card::after {
         display: none;
     }
-    .session_card.open .details {
-        max-height: 2000px;
-    }
 }
 
 /*Tiny screens*/
@@ -1200,9 +1189,5 @@ section {
     .button,
     .view_more {
         max-width: 75%;
-    }
-
-    .session_card.open .details {
-        max-height: 2000px;
     }
 }
