@@ -1012,6 +1012,10 @@ section {
         font-size: 0.95rem;
     }
 
+    .details.open .details {
+        max-height: 900px;
+    }
+
     .info_card p {
         padding: 1.6rem 1.3rem;
         font-size: 1rem;
@@ -1098,7 +1102,7 @@ section {
 }
 
 /*Top bar for multiple screens*/
-@media (max-width: 700px) {
+@media (max-width: 750px) {
     .top_bar {
         height: auto;
         min-height: 72px;
@@ -1153,6 +1157,10 @@ section {
     .info_card::before,
     .info_card::after {
         display: none;
+    }
+
+    .details.open .details {
+        max-height: 900px;
     }
 }
 
