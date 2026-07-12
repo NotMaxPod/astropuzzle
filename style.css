@@ -524,7 +524,7 @@ section {
 }
 
 .session_card.open .details {
-    max-height: 300px;
+    margin-bottom: 1.7rem;
     opacity: 1;
     margin-top: 1.7rem;
 }
