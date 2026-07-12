@@ -1012,10 +1012,6 @@ section {
         font-size: 0.95rem;
     }
 
-    .session_card.open .details {
-        max-height: 2000px;
-    }
-
     .info_card p {
         padding: 1.6rem 1.3rem;
         font-size: 1rem;
