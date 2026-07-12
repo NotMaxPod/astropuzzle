@@ -928,6 +928,10 @@ section {
     .aboutme_text {
         padding-left: 1.7rem;
     }
+    
+    .session_card.open .details {
+        max-height: 2000px;
+    }
 }
 
 /*Phone Screen*/
@@ -1012,8 +1016,8 @@ section {
         font-size: 0.95rem;
     }
 
-    .details.open .details {
-        max-height: 1500px;
+    .session_card.open .details {
+        max-height: 2000px;
     }
 
     .info_card p {
@@ -1098,6 +1102,10 @@ section {
 
     main {
         padding-top: 120px;
+    }
+
+    .session_card.open .details {
+        max-height: 2000px;
     }
 }
 
